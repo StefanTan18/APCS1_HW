@@ -1,0 +1,43 @@
+// Team Back for Seconds Team #2
+// APCS1 pd8
+// HW11 -- Breaking the Bank
+// 2017-10-04
+
+public class Teller{
+    public static void main(String args[] ){
+	BankAccount acc = new BankAccount();
+
+	System.out.println(acct);
+
+	System.out.println("--------------output for invalid input----------------");
+	System.out.println("Error message for setPin method: ");
+	System.out.println(acct.setPin(104));
+	System.out.println("Error message for setAcctNum method: ");
+	System.out.println(acct.setAcctNum(11233445));
+	
+	System.out.println("--------------new version----------------");
+	acct.setName("Ice Cream");
+	acct.setPasswd("soMuchHomework");
+	acct.setPin(1004);
+	acct.setAcctNum(112233445);
+	acct.setBalance(25000);
+	System.out.println(acct);
+
+	acct.deposit(2000);
+	System.out.println("The balance after the deposit of $2000: ");
+	System.out.println(acct);
+
+	acct.withdraw(20000);
+	System.out.println("The balance after the withdraw of $20000: ");
+	System.out.println(acct);
+
+
+	System.out.println("Error message for withdraw method: ");
+	acct.withdraw(5000000);
+
+	System.out.println("Is the account number and the password right?");
+  	System.out.println(acct.authenticate(112233445,"soMuchHomework"));
+  	System.out.println(acct.authenticate(999999999,"thisisapasswor"));
+    }
+}
+

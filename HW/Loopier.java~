@@ -1,0 +1,47 @@
+/* 
+Stefan Tan
+APCS1 pd8
+HW#25 -- All Hallow's Eve
+2017-10-31
+*/
+
+public class Loopier{
+    public static int[] populate(int[] anArray){
+	for (int i = 0; i < anArray.length; i++){
+	    anArray[i] = (int) (Math.random() * 100);
+	}
+	return anArray;
+    }// end populate
+
+    public static String arrayToString(int[] anArray){
+	String arrayStr = "";
+	for (int i = 0; i < anArray.length; i++){
+	    arrayStr += anArray[i] + " ";
+	}
+	return arrayStr;
+    }// end arrayToString
+
+    public static int linSearch(int[] a, int target){
+	for (int i = 0; i < a.length; i++){
+	    if (a[i] == target)
+		return i;
+	}
+	return -1;
+    }// end linSearch
+
+    public static int linSearchR(int[] a, int target){
+	int len = 0;
+	if (len == a.length)
+	    return -1;
+	else {
+	}
+    }
+
+    public static void main(String[] args){
+	int[] Array;
+	Array = new int[10];
+	System.out.println(populate(Array));
+	System.out.println(arrayToString(Array));
+	System.out.println(linSearch(Array, 97));
+    }//end main
+}// end class Loopier

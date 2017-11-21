@@ -1,0 +1,48 @@
+//Stefan Tan
+//APCS1 pd8
+//CW1 -- Codingbat
+//2017-10-20
+
+public class CodingBat {
+    //String-1 Category
+
+    /*Given a string name, e.g. "Bob", return a greeting of
+      the form "Hello Bob!". */
+    public static String helloName(String name) {
+	return "Hello " + name + "!";
+    }
+    /*Given two strings, a and b, return the result of putting them together in
+      the order abba, e.g. "Hi" and "Bye" returns "HiByeByeHi". */
+    public static String makeAbba(String a, String b) {
+	return a + b + b + a;
+    }
+    
+    //String-2 Category
+
+    /*Given a string, return a string where for every char in the original,
+      there are two chars. */
+    public static String doubleChar(String str) {
+	int len = str.length();
+	String dChar = "";
+	for (int i = 1; i < len; i += 1) {
+	    dChar += str.substring(i, i + 1);
+	}
+	return dChar;
+    }
+
+    public static void main(String[] args) {
+	System.out.println(helloName("Bob")); // → "Hello Bob!"
+	System.out.println(helloName("Alice")); // → "Hello Alice!"
+	System.out.println(helloName("X")); // → "Hello X!"
+
+	System.out.println(makeAbba("Hi", "Bye")); // → "HiByeByeHi"
+	System.out.println(makeAbba("Yo", "Alice")); // → "YoAliceAliceYo"
+	System.out.println(makeAbba("What", "Up")); // → "WhatUpUpWhat"
+
+	System.out.println((doubleChar("The"))); // → "TThhee"
+	System.out.println((doubleChar("AAbb"))); // → "AAAAbbbb"
+	System.out.println((doubleChar("Hi-There")));// → "HHii--TThheerree"
+    }// ends main 
+}// ends class CodingBat
+						       
+ 

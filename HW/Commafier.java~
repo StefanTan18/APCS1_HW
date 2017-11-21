@@ -1,0 +1,24 @@
+//Stefan Tan
+//APCS1 pd8
+//HW#21 -- Karmacomma
+//2017-10-23
+
+public class Commafier {
+
+    public static String commafyR(int) {
+	String commaNum = int;
+	if (commaNum.length() <= 3)
+	    return commaNum;
+	else {
+	    return commaNum += commafyR(int / 1000) + ",";
+	}
+    }
+
+    public static void main(String[] args) {
+	System.out.println(commafyR(1));
+	System.out.println(commafyR(10));
+	System.out.println(commafyR(101));
+	System.out.println(commafyR(1000));
+	System.out.println(commafyR(12345));
+    }
+}

@@ -1,0 +1,23 @@
+//Stefan Tan
+//APCS1 pd8
+//HW#20 -- For the Lulz Love of Strings
+//2017-10-19
+
+public class Foresrever {
+
+    public static String fenceF(int posts){
+	String fence = "|";
+	for (posts; post != 1; post -= 1) {
+	    fence += "--|";
+	}
+	return fence;
+    }
+
+    public static void main(String[] args) {
+	System.out.println(fenceF(1));
+	System.out.println(fenceF(2));
+	System.out.println(fenceF(3));
+    }
+}
+	    
+	    

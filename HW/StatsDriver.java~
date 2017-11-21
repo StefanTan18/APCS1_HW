@@ -1,0 +1,9 @@
+public class StatsDriver {
+    public static void main(String[] args){
+	Stats test = new Stats();	
+	System.out.println(test.gcdER(2,2));
+	System.out.println(test.gcdER(15,20));
+	System.out.println(test.gcdER(121,1221));
+
+    }
+}
