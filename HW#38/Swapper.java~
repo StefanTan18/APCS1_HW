@@ -1,0 +1,73 @@
+//Stefan Tan
+//APCS1 pd8
+//HW#38 -- Put It Together
+//2017-11-21
+
+/*~~~~~~~~~~~~~~SUMMARY OF CODE~~~~~~~~~~~~~~~~
+
+
+import cs1.Keyboard;
+
+public class Swapper{
+    private static final String[] WORDS = {
+	"word", "line", "buzz", "jazz",
+	"test", "quiz", "rock", "jump",
+	"cat", "dog", "map", "joke",
+	"java", "jeep", "hack", "try",
+	"that", "hat", "buy", "pig",
+	"what", "two", "one", "zero"
+    };
+
+    private static String[][] _words;
+    
+    public Swapper(){
+	_words = new String[3][3];
+        for (int r = 0; r < 3; r++){
+	    for (int c = 0; c < 3; c++)
+		_words[r][c] = WORDS[(int)(Math.random()* WORDS.length)];
+	}
+    }
+		
+    public static void print( String[][] a )
+    {
+	for(String [] r : a) {
+	    for (String c : r)
+		System.out.print(c + " ");
+	    System.out.println();
+	}
+    }
+
+    public static void swap(int a, int b, int c, int d) {
+	String temp = _words[a][b];
+	_words[a][b] = _words[c][d];
+	_words[c][d] = temp;
+    }
+
+    public static void main(String[] args){
+	Swapper test = new Swapper();
+	
+	print(_words);
+	
+	System.out.println("\nSwap:");
+	System.out.println("\nPlease choose a row:");
+	int s = Keyboard.readInt();
+	System.out.println("\nPlease choose a column:");
+        int t = Keyboard.readInt();
+	System.out.println("\nSwap it with:");
+	System.out.println("\nPlease choose a row:");
+	int u = Keyboard.readInt();
+	System.out.println("\nPlease choose a column:");
+	int v = Keyboard.readInt();
+	
+	swap(s,t,u,v);
+	
+	print(_words);
+    }
+}
+   
+	
+	
+
+    
+	
+
