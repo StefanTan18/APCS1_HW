@@ -8,7 +8,7 @@
  * stores a rational number (p/q s.t. p,q ints && q!=0)
  *
  ******************************/
-public class Rational
+public class Rational implements Comparable 
 {
     //   Instance variables for the numerator and denominator
     private int _numerator;
