@@ -1,3 +1,8 @@
+//Stefan Tan
+//APCS1 pd8
+//HW#49 -- Halving the Halves
+//2017-12-07
+
 /********************************
  * class OrderedArrayList
  * wrapper class for ArrayList.
@@ -70,7 +75,25 @@ public class OrderedArrayList
       for a new element.
      */
     public void addBin( Comparable newVal ){
-
+        int low = 0;
+	int high = size();
+	int mid = (low + high) / 2;
+	while (high - low > 0){
+	    
+	    if (newVal.compareTo(_data.get(mid)) < 0) {
+		high = mid; // removes upper half of data
+	    }
+	    else if(newVal.compareTo(_data.get(mid)) > 0) {
+		low = mid + 1; // removes lower half of data
+	    }
+	    else {
+		_data.add(mid, newVal);
+		return;
+	    }
+	    mid = (low + high) / 2;	    
+	}
+	_data.add(mid, newVal);
+	System.out.println("Updated Data: " + _data);
     }
 
   // main method solely for testing purposes
@@ -79,19 +102,22 @@ public class OrderedArrayList
     OrderedArrayList Franz = new OrderedArrayList();
 
     // testing linear search
-    for( int i = 0; i < 15; i++ )
-      Franz.add( (int)( 50 * Math.random() ) );
-    System.out.println( Franz );
+    for( int i = 0; i < 15; i++ ){
+	//Franz.add( (int)( 50 * Math.random() ) );
+      Franz.addBin( (int)( 50 * Math.random() ) );
+    }
+    System.out.print("\nFinal Data: ");
+    System.out.println( Franz + "\n");
 
     //check for sorted-ness
     //if msg does not appear, list was sorted
     for( int i=0; i<Franz.size()-1; i++ ) {
-      System.out.println("at i: " + Franz.get(i) );
-      if ( Franz.get(i).compareTo(Franz.get(i+1)) > 0 ) {
-        System.out.println( " *** NOT sorted *** " );
-        break;
-      }
-    }
+	System.out.println("at i: " + Franz.get(i) );
+	if ( Franz.get(i).compareTo(Franz.get(i+1)) > 0 ) {
+	    System.out.println( " *** NOT sorted *** " );
+	    break;
+	}
+    } 
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
