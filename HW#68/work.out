@@ -13,7 +13,73 @@ CW#68 -- PPMP
 8. A
 9. C
 10. D
+
 11a.
+
+public int nextTankToFill(int threshold) {
+    int index = getCurrentIndex();
+    int minimum = threshold;
+
+    // iterate through tanks to find lowest fuel tank
+    for(int i = 0; i < tanks.length; i++) {
+        if (tanks.get(i).getFuelTankLevel() <= minimum) {
+            minimum = tanks.get(i).getFuelTankLevel();
+            index = i;
+        }
+    }
+
+    // return lowest fuel tank location
+    return index;
+}
+
 11b.
+
+public int moveForward(int locIndex) {
+    if (locIndex < getCurrentIndex()) {
+        if (isFacingRight) {
+            changeDirection();
+        }
+    }
+    else {
+        if (!isFacingRight) {
+            changeDirection();
+        }
+    }
+    moveForward(Math.abs(locIndex - getCurrentIndex()));
+}
+
 12a.
+
+private void fillBlock(String str) {
+    for (int i = 0; i < str.length(); i++) {
+        int r = 0;
+        int c = 0;
+        letterBlock[r][c] = str.substring(i, i+1);
+        if(c < numCols - 1) {
+            c += 1;
+        }
+        else if(r < numRows - 1) {
+            r += 1;
+        }
+        else 
+            break;
+    }
+}
+
 12b.
+
+private String encryptBlock(String message) {
+    fillBlock(message);
+    int c = 0;
+    int r = 0;
+    String encrypted = "";
+    while(c < numCols-1) {
+	while(r < numRows) {
+	    encrypted += letterBlock[r][c];
+	    r += 1;
+	}
+	r = 0;
+        c += 1;
+    }
+    return encrypted;		
+}
